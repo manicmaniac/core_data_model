@@ -20,12 +20,15 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_runtime_dependency 'activesupport'
+  spec.add_runtime_dependency 'activesupport', '~> 4.0'
+  spec.add_runtime_dependency 'nokogiri', '~> 1.6.0'
+  spec.add_runtime_dependency 'plist'
   spec.add_runtime_dependency 'sax-machine'
   spec.add_runtime_dependency 'wannabe_bool'
 
-  spec.add_development_dependency 'bundler', '~> 1.10'
+  spec.add_development_dependency 'bundler', '~> 1.11'
   spec.add_development_dependency 'rake', '~> 10.0'
-  spec.add_development_dependency 'rspec'
-  spec.add_development_dependency 'rubocop'
+  spec.add_development_dependency 'minitest', '~> 5.0'
+  spec.add_development_dependency 'minitest-reporters'
+  spec.add_development_dependency 'rubocop', '0.37.2'
 end

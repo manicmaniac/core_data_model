@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="model version 2" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F27" minimumToolsVersion="Automatic">
+    <entity name="AbstractEntity" representedClassName=".AbstractEntity" isAbstract="YES" syncable="YES"/>
+    <entity name="AllTypesOfAttributes" representedClassName=".AllTypesOfAttributes" syncable="YES">
+        <attribute name="binaryAttribute" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="booleanAttribute" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="dateAttribute" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="decimalAttribute" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="doubleAttribute" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="floatAttribute" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="integer16Attribute" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="integer32Attribute" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="integer64Attribute" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="stringAttribute" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="transformableAttribute" optional="YES" attributeType="Transformable" syncable="YES"/>
+    </entity>
+    <entity name="ConcreteEntity" representedClassName=".ConcreteEntity" parentEntity="AbstractEntity" syncable="YES"/>
+    <entity name="FetchedProperties" representedClassName=".FetchedProperties" syncable="YES">
+        <fetchedProperty name="fetchedProperty" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="FetchedProperties" predicateString="test = &quot;test&quot;"/>
+            <userInfo>
+                <entry key="key" value="value"/>
+            </userInfo>
+        </fetchedProperty>
+    </entity>
+    <entity name="NewInVersion2" representedClassName=".NewInVersion2" syncable="YES"/>
+    <entity name="RelationshipFrom" representedClassName=".RelationshipFrom" syncable="YES">
+        <relationship name="invertedRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RelationshipTo" inverseName="relationship1" inverseEntity="RelationshipTo" syncable="YES"/>
+        <relationship name="relationshiopProperties" optional="YES" transient="YES" toMany="YES" minCount="1" maxCount="2" deletionRule="Nullify" ordered="YES" destinationEntity="RelationshipTo" inverseName="relationship2" inverseEntity="RelationshipTo" spotlightIndexingEnabled="YES" storedInTruthFile="YES" syncable="YES">
+            <userInfo>
+                <entry key="key" value="value"/>
+            </userInfo>
+        </relationship>
+        <relationship name="toManyRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RelationshipTo" inverseName="relationship3" inverseEntity="RelationshipTo" syncable="YES"/>
+    </entity>
+    <entity name="RelationshipTo" representedClassName=".RelationshipTo" syncable="YES">
+        <relationship name="relationship1" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RelationshipFrom" inverseName="invertedRelationship" inverseEntity="RelationshipFrom" syncable="YES"/>
+        <relationship name="relationship2" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RelationshipFrom" inverseName="relationshiopProperties" inverseEntity="RelationshipFrom" syncable="YES"/>
+        <relationship name="relationship3" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RelationshipFrom" inverseName="toManyRelationship" inverseEntity="RelationshipFrom" syncable="YES"/>
+    </entity>
+    <entity name="UserInfo" representedClassName=".UserInfo" elementID="Renaming Identifier" versionHashModifier="Version Hash Modeifier" syncable="YES">
+        <attribute name="attribute" optional="YES" attributeType="Integer 16" defaultValueString="0" versionHashModifier="Version Hash Modiefier" elementID="Renaming Identifier" syncable="YES">
+            <userInfo>
+                <entry key="key" value="value"/>
+            </userInfo>
+        </attribute>
+        <attribute name="comma" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="properties" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="separated" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInfo" inverseName="relationship" inverseEntity="UserInfo" versionHashModifier="Version Hash Modiefier" elementID="Renaming Identifier" syncable="YES">
+            <userInfo>
+                <entry key="key" value="value"/>
+            </userInfo>
+        </relationship>
+        <fetchedProperty name="fetchedProperty" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="UserInfo" predicateString="test = &quot;&quot;"/>
+            <userInfo>
+                <entry key="key" value="value"/>
+            </userInfo>
+        </fetchedProperty>
+        <compoundIndexes>
+            <compoundIndex>
+                <index value="comma"/>
+                <index value="separated"/>
+                <index value="properties"/>
+            </compoundIndex>
+        </compoundIndexes>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="comma"/>
+                <constraint value="separated"/>
+                <constraint value="properties"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+        <userInfo>
+            <entry key="key" value="value"/>
+        </userInfo>
+    </entity>
+    <fetchRequest name="FetchRequest" entity="FetchedProperties" predicateString="test = &quot;&quot;" fetchLimit="1" fetchBatchSize="1" includeSubentities="YES" includePropertyValues="YES" includesPendingChanges="YES" returnObjectsAsFaults="YES" returnDistinctResults="YES"/>
+    <configuration name="Configuration"/>
+    <elements>
+        <element name="AbstractEntity" positionX="36" positionY="162" width="128" height="45"/>
+        <element name="AllTypesOfAttributes" positionX="-18" positionY="27" width="128" height="210"/>
+        <element name="ConcreteEntity" positionX="9" positionY="108" width="128" height="45"/>
+        <element name="FetchedProperties" positionX="36" positionY="135" width="128" height="74"/>
+        <element name="RelationshipFrom" positionX="18" positionY="117" width="128" height="90"/>
+        <element name="RelationshipTo" positionX="27" positionY="126" width="128" height="90"/>
+        <element name="UserInfo" positionX="45" positionY="144" width="128" height="149"/>
+        <element name="NewInVersion2" positionX="81" positionY="180" width="128" height="45"/>
+    </elements>
+</model>

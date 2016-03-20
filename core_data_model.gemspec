@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_runtime_dependency 'activesupport', '~> 4.0'
-  spec.add_runtime_dependency 'nokogiri', '~> 1.6.0'
+  spec.add_runtime_dependency 'oga', '~> 2.2'
   spec.add_runtime_dependency 'plist'
   spec.add_runtime_dependency 'sax-machine'
   spec.add_runtime_dependency 'wannabe_bool'

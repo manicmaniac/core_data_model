@@ -1,5 +1,7 @@
 # CoreDataModel
 
+[![Build Status](https://img.shields.io/travis/manicmaniac/core_data_model/master.svg)](https://travis-ci.org/manicmaniac/core_data_model)
+
 Highly customizable Swift code generator for CoreData models.
 
 Inspired by [mogenerator](https://github.com/rentzsch/mogenerator).

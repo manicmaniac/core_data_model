@@ -1,12 +1,10 @@
 # CoreDataModel
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/core_data_model`. To experiment with that code, run `bin/console` for an interactive prompt.
+Highly customizable Swift code generator for CoreData models.
 
-TODO: Delete this and the text above, and describe your gem
+Inspired by [mogenerator](https://github.com/rentzsch/mogenerator).
 
 ## Installation
-
-Add this line to your application's Gemfile:
 
 ```ruby
 gem 'core_data_model'
@@ -22,7 +20,25 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```sh
+core-data-model generate /path/to/.xcdatamodeld /path/to/output/
+```
+
+## Customize Template
+
+You can give your template file as `--template-file` option to command line.
+
+```sh
+core-data-model generate --template-file /path/to/template /path/to/.xcdatamodeld /path/to/output/
+```
+
+The template is an [eRuby](https://en.wikipedia.org/wiki/ERuby) script.
+
+Already includes [activesupport](https://github.com/rails/rails/tree/master/activesupport) for convenience.
+The local variable named `entity` -- `NSEntityDescription` implementation in Ruby -- is pre-defined.
+`entity` behaves like its Objective-C implementation, but without some functionalities.
+
+The documentations haven't been prepared yet, but the default template file [here](data/entity.swift.erb) would be a good example.
 
 ## Development
 
@@ -32,10 +48,9 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/core_data_model.
+Bug reports and pull requests are welcome on GitHub [repo](https://github.com/manicmaniac/core_data_model).
 
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-

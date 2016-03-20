@@ -39,7 +39,7 @@ module EntityTest
 
   class InheritanceExample < Minitest::Test
     XML = <<-XML.freeze
-      <entity name="name" representedClassName="RepresentedClassName"
+      <entity name="name" representedClassName="Module.RepresentedClass"
               parentEntity="ParentEntity" isAbstract="YES">
       </entity>
     XML
@@ -54,6 +54,18 @@ module EntityTest
 
     def test_abstract?
       assert @entity.abstract?
+    end
+
+    def test_represented_class_name
+      assert_equal 'Module.RepresentedClass', @entity.represented_class_name
+    end
+
+    def test_module_name
+      assert_equal 'Module', @entity.module_name
+    end
+
+    def test_class_name
+      assert_equal 'RepresentedClass', @entity.class_name
     end
   end
 

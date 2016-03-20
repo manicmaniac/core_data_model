@@ -26,6 +26,10 @@ module RelationshipTest
       refute @relationship.to_many?
     end
 
+    def test_to_one?
+      assert @relationship.to_one?
+    end
+
     def test_min_count
       assert_nil @relationship.min_count
     end
@@ -81,6 +85,10 @@ module RelationshipTest
       assert @relationship.to_many?
     end
 
+    def test_to_one?
+      refute @relationship.to_one?
+    end
+
     def test_min_count
       assert_equal 1, @relationship.min_count
     end
@@ -119,6 +127,10 @@ module RelationshipTest
 
     def test_syncable?
       assert @relationship.syncable?
+    end
+
+    def test_type
+      assert_equal 'NSOrderedSet', @relationship.type
     end
   end
 

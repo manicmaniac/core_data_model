@@ -3,34 +3,30 @@ import CoreData
 
 public final class <%= entity.class_name %>: <%= entity.super_class_name %> {
 
-  <% if entity.attributes.present? %>
+  <%- if entity.attributes.present? -%>
     enum Attribute: String {
-      <% entity.attributes.each do |attribute| %>
+      <%- entity.attributes.each do |attribute| -%>
         case <%= attribute.name.capitalize %> = "<%= attribute.name %>"
-      <% end %>
+      <%- end -%>
     }
-  <% end %>
-
-  <% if entity.relationships.present? %>
+  <%- end -%>
+  <%- if entity.relationships.present? -%>
     enum Relationship: String {
-      <% entity.relationships.each do |relationship| %>
+      <%- entity.relationships.each do |relationship| -%>
         case <%= relationship.name.capitalize %> = "<%= relationship.name %>"
-      <% end %>
+      <%- end -%>
     }
-  <% end %>
-
-  <% if entity.fetched_properties.present? %>
+  <%- end -%>
+  <%- if entity.fetched_properties.present? -%>
     enum FetchedProperty: String {
-      <% entity.fetched_properties.each do |fetched_property| %>
+      <%- entity.fetched_properties.each do |fetched_property| -%>
         case <%= fetched_property.name.capitalize %> = "<%= fetched_property.name %>"
-      <% end %>
+      <%- end -%>
     }
-  <% end %>
-
-  <% entity.properties.each do |property| %>
+  <%- end -%>
+  <%- entity.properties.each do |property| -%>
     @NSManaged <%= property.access_modifier %> var <%= property.name %>: <%= property.type %>
-  <% end %>
-
+  <%- end -%>
     public static let entityName = "<%= entity.name %>"
 
     public class func entity(inManagedObjectContext context: NSManagedObjectContext) -> NSEntityDescription? {

@@ -39,7 +39,7 @@ module CoreDataModel
     alias return_distinct_results? return_distinct_results
 
     def model
-      if ancestor.is_a(Model)
+      if ancestor.is_a?(Model)
         ancestor
       else
         fetched_property.entity.model
@@ -47,7 +47,7 @@ module CoreDataModel
     end
 
     def fetched_property
-      ancestor if ancestor.is_a(FetchedProperty)
+      ancestor if ancestor.is_a?(FetchedProperty)
     end
 
     def entity

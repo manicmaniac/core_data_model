@@ -46,6 +46,10 @@ module CoreDataModel
       super_entity ? super_entity.class_name : 'NSManagedObject'
     end
 
+    def concrete?
+      !abstract?
+    end
+
     def properties
       attributes + relationships + fetched_properties
     end

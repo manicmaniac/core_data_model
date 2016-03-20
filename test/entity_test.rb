@@ -16,6 +16,10 @@ module EntityTest
       refute @entity.abstract?
     end
 
+    def test_concrete?
+      assert @entity.concrete?
+    end
+
     def test_syncable?
       refute @entity.syncable?
     end
@@ -54,6 +58,10 @@ module EntityTest
 
     def test_abstract?
       assert @entity.abstract?
+    end
+
+    def test_concrete?
+      refute @entity.concrete?
     end
 
     def test_represented_class_name

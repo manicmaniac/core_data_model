@@ -1,5 +1,9 @@
 require 'coveralls'
-Coveralls.wear!
+require 'simplecov'
+SimpleCov.formatter = Coveralls::SimpleCov::Formatter
+SimpleCov.start do
+  add_filter '/test/'
+end
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'sax-machine'
 require 'core_data_model'

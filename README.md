@@ -35,10 +35,12 @@ core-data-model generate --template-file /path/to/template /path/to/.xcdatamodel
 The template is an [eRuby](https://en.wikipedia.org/wiki/ERuby) script.
 
 Already includes [activesupport](https://github.com/rails/rails/tree/master/activesupport) for convenience.
+
 The local variable named `entity` -- `NSEntityDescription` implementation in Ruby -- is pre-defined.
+
 `entity` behaves like its Objective-C implementation, but without some functionalities.
 
-The documentations haven't been prepared yet, but the default template file [here](data/entity.swift.erb) would be a good example.
+The documentations haven't been prepared yet, but the default template file [HERE](/manicmaniac/core_data_model/blob/master/data/core_data_model/entity.swift.erb) would be a good example.
 
 ## Development
 

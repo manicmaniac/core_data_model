@@ -18,13 +18,13 @@ module CoreDataModel
 
     def parse_current_version
       path = @path.join('.xccurrentversion').to_s
-      current_version = Plist.parse_xml(path)['_XCCurrentVerionName']
+      current_version = Plist.parse_xml(path)['_XCCurrentVersionName']
       return if current_version.nil?
       @path.join(current_version)
     end
 
     def find_versions
-      Pathname.glob(@path.join('*.xcdatamodel/'))
+      Pathname.glob(@path.join('*.xcdatamodel'))
     end
 
     def parse_model

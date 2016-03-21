@@ -29,7 +29,7 @@ module CoreDataModel
         require 'active_support/all'
         output_file_path = @output_path.join("#{entity.class_name}.swift")
         code = @template.result(binding)
-        File.write(output_file_path, code)
+        output_file_path.write(code)
         puts("Generated: #{output_file_path}")
       end
 
